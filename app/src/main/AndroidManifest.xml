@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.omanid">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera2.full"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".LivenessActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+<!--        <activity-->
+<!--            android:name=".bottomSheet"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".ReadyToScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FaceialMatchingResult"
+            android:exported="false" />
+        <activity
+            android:name=".NFC_result_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Camera_Result"
+            android:exported="false" />
+        <activity
+            android:name=".ComparisionSuccessful"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.liveness.LivenessMainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name="com.LivenessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".SelectDocumentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Vision_id"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CameraRectangle"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mrtd2.MainActivityMRZ"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".AndroidCameraApi"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.mrtd2.ResultDisplayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/title_activity_result_display"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="bondi.nfcPassportReader.jan.mrtd2.ResultDisplayActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mrtd2.WaitingForNfcActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/title_activity_waiting_for_nfc"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="bondi.nfcPassportReader.jan.mrtd2.WaitingForNfcActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mrtd2.ReadingPassportActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/title_activity_reading_passport"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="bondi.nfcPassportReader.jan.mrtd2.ReadingPassportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
